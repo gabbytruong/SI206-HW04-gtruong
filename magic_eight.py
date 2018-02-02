@@ -7,14 +7,15 @@ reponses = [ "It is certain", "It is decidedly so", "Without a doubt",
 "Concentrate and ask again", "Don't count on it", "My reply is no", 
 "My sources say no", "Outlook not so good", "Very doubtful" ]
 
+question = ''
 
-
-question = input("What is your question?")
-
-if question == "Quit":
-    break
-elif question[-1] != "?":
-    return ("Sorry, I can only answer questions!")
-elif question = input("What is your question?"):
-    print(random.choice(reponses))
-
+while question != "Quit":
+    question = input("What is your question?")
+    if question[-1] != "?" and question != "Quit":
+        print("Sorry, I can only answer questions!")
+    elif question[-1] == "?":
+        print(random.choice(reponses))
+        #print (responses[random.rantint(0, len(responses)-1)])
+    elif question == 'Quit':
+        break
+        
